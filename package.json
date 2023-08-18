@@ -1,0 +1,53 @@
+{
+  "name": "cypress-cucumber-automation",
+  "version": "1.0.0",
+  "description": "Cypress-Cucumber-BrowserStack-TypeScript Automation Framework with Cucumber Test Report or Allure Report",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open --e2e",
+    "cypress:open:chrome": "cypress open --e2e --browser chrome",
+    "cypress:open:electron": "cypress open --e2e --browser electron",
+    "cucumber:report": "node cucumber-html-report.ts && open reports/html/index.html",
+    "cypress:run:mochawesome": "npm run mochawesome:clear && cypress run --spec \"cypress/e2e/features/*\" --headed",
+    "cypress:run:cucumber": "npm run cucumber:clear && cypress run --spec \"cypress/e2e/features/q*\" --headed && npm run cucumber:report",
+    "cypress:run:dev": "npm run cucumber:clear && cypress run --env configFile=dev --spec \"cypress/e2e/features/*\" --headed && npm run cucumber:report",
+    "cypress:run-tags": "npm run cucumber:clear && cypress run --env tags='@mobile or @desktop' --spec \"cypress/e2e/features/*\" --headed && node cucumber-html-report.ts && open reports/html/index.html",
+    "cucumber:clear": "rm -r log npm_install_debug.log reports cucumber-report.html  cypress/videos cypress/screenshots || true",
+    "mochawesome:clear": "rm -rf cypress/mochawesomeReport cypress/reports cypress-mochawesome-reporter.log || true",
+    "allure:clear": "rm -rf allure-results/ allure-report cypress/screenshots cypress/videos reports || true",
+    "cypress:run-allure": "cypress run --env allure=true --headed",
+    "allure:report": "allure generate allure-results --clean -o allure-report",
+    "allure:history": "mv -f allure-report/history allure-results/history && rm -r allure-report || true",
+    "allure:full": "npm run allure:clear && npm run cypress:run-allure && npm run allure:report && allure open",
+    "bs": "npm run cucumber:clear && browserstack-cypress run --sync --spec \"cypress/e2e/features/login.feature\" --headed"
+  },
+  "keywords": [
+    "cypress"
+  ],
+  "author": "Junhao",
+  "license": "ISC",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^15.0.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
+    "@shelex/cypress-allure-plugin": "^2.34.0",
+    "@testing-library/cypress": "^9.0.0",
+    "@types/del": "^4.0.0",
+    "@types/fs-extra": "^11.0.1",
+    "@types/lodash": "^4.14.197",
+    "@types/node": "14.18.13",
+    "cypress": "^12.0.2",
+    "cypress-mochawesome-reporter": "^3.5.1",
+    "cypress-xpath": "^2.0.1",
+    "del": "^7.0.0",
+    "esbuild": "^0.16.4",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-cypress": "2.12.1",
+    "eslint-plugin-prettier": "4.0.0",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1",
+    "multiple-cucumber-html-reporter": "^3.4.0",
+    "path": "^0.12.7",
+    "ts-node": "10.7.0",
+    "typescript": "4.6.3"
+  }
+}
