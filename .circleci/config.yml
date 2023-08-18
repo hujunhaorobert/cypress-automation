@@ -5,9 +5,20 @@ orbs:
   # the strict explicit version "cypress-io/cypress@3.x.y"
   # to lock the version and prevent unexpected CI changes
   cypress: cypress-io/cypress@3
+jobs:
+  run-test-and-notify:
+    steps:
+      # - checkout
+      # - run:
+      #     name: Download dependency
+      #     environment:
+      #       SECRET_KEY: SECRET_KEY 
+      #     command: npm ci
+      - run:
+          name: Run tests
+          command: npm run cypress:run-allure:ci 
 workflows:
-  build:
+  run-test-workflow:
     jobs:
-      # "run" job comes from "cypress" orb
-      - cypress/run
+      - run-test-and-notify
           # start-command: 'npm run cypress:run-allure:ci'
