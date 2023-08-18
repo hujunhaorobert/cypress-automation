@@ -8,7 +8,18 @@ import _ from "lodash";
 import "cypress-xpath";
 
 Given("User visit Qantas home page", () => {
-  cy.once('uncaught:exception', () => false);
+  // cy.once('uncaught:exception', () => false);
+  // catching an exception that is thrown in console by linked website itself - we don't want test to stop here!
+  Cypress.on('uncaught:exception', (err, runnable) => {
+    // we expect a 3rd party library error with message 'list not defined'
+    // and don't want to fail the test so we return false
+    expect(err.message).to.include(`Cannot read properties of undefined (reading 'indexOf')`);
+    if (err.message.includes(`Cannot read properties of undefined (reading 'indexOf')`)) {
+      return false
+    }
+    // we still want to ensure there are no other unexpected
+    // errors, so we let them fail the test
+  });
   cy.visit("https://www.qantas.com/au/en.html");
   cy.log("Land on Qantas Home page");
   cy.url().should("contains", "/au/en.html");
