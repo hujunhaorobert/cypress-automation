@@ -10,6 +10,6 @@ workflows:
     jobs:
       # "run" job comes from "cypress" orb
       - cypress/run:
-          cypress-command: npx cypress run --browser chrome --env allure=true
+          cypress-command: npm run cypress:run-allure:ci
           install-browsers: true
           # start-command: 'npm run cypress:run-allure:ci'
