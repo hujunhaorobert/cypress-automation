@@ -46,7 +46,7 @@ Then("User mouse hover to Qantas menu items to browser the avaliable services", 
     const menuItem = _.camelCase(row.menuItem);
     // cy.get(QantasHomePage.travelGuidesMenu).trigger('mouseover').click();
     cy.get(QantasHomePage[`${menuItem}Menu`]).trigger('mouseover');
-    cy.wait(300);
+    cy.wait(200);
   }
 });
 
