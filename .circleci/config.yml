@@ -8,5 +8,6 @@ orbs:
 workflows:
   build:
     jobs:
-      - cypress/run # "run" job comes from "cypress" orb
+      # "run" job comes from "cypress" orb
+      - cypress/run
           start-command: 'npm run cypress:run-allure:ci'
