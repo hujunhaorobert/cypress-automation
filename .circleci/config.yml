@@ -34,7 +34,7 @@ jobs:
           name: Run tests
           command: npm run cypress:multi-report && npm run combine:reports
       - store_test_results:
-          path: cypress/results/results.xml
+          path: results.xml
       - store_artifacts:
           path: /root/project/cucumber-report.html
           destination: cucumber-report.html
