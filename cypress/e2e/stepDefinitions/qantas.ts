@@ -20,6 +20,7 @@ Given("User visit Qantas home page", () => {
     // we still want to ensure there are no other unexpected
     // errors, so we let them fail the test
   });
+  // Workaround for 403 in circleCI
   cy.visit("https://www.qantas.com/au/en.html",{
     headers: {
       "Accept" : "application/json, text/plain, */*",
