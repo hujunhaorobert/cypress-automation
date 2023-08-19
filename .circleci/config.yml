@@ -28,11 +28,11 @@ jobs:
             SECRET_KEY: SECRET_KEY
           command: npm ci
       - run:
-          name: Install JQ + CURL
+          name: Install JQ and CURL
           command: apt update && apt install -y jq && apt install curl && curl --version 
       - run:
           name: Run tests
-          command: npm run cypress:multi-report && npm run combine:reports && mv ./cypress/results/results.xml . && ls -la
+          command: npm run cypress:multi-report && npm run combine:reports
       - store_test_results:
           path: cypress/results/results.xml
       - store_artifacts:
