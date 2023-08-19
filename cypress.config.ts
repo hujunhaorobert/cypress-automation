@@ -53,6 +53,7 @@ async function setupNodeEvents(on, config) {
 
 module.exports = defineConfig({
   experimentalWebKitSupport: true,
+  experimentalModifyObstructiveThirdPartyCode: true,
   reporter: 'cypress-multi-reporters',
   reporterOptions: {
     configFile: 'reporter-config.json',
