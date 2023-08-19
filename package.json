@@ -13,7 +13,7 @@
     "cypress:run:dev": "npm run cucumber:clear && cypress run --env configFile=dev --spec \"cypress/e2e/features/*\" --headed && npm run cucumber:report",
     "cypress:run-tags": "npm run cucumber:clear && cypress run --env tags='@mobile or @desktop' --spec \"cypress/e2e/features/*\" --headed && node cucumber-html-report.ts && open reports/html/index.html",
     "cucumber:clear": "rimraf log npm_install_debug.log reports cucumber-report.html  cypress/videos cypress/screenshots || true",
-    "mochawesome:clear": "rimraf cypress/mochawesomeReport cypress/reports cypress-mochawesome-reporter.log || true",
+    "mochawesome:clear": "rimraf cypress/mochawesomeReport cypress/reports cypress/videos cypress-mochawesome-reporter.log || true",
     "allure:clear": "rimraf allure-results/ allure-report cypress/screenshots cypress/videos reports || true",
     "cypress:run-allure": "cypress run --env allure=true --headed",
     "cypress:run-allure:ci": "cypress run --env allure=true --spec \"cypress/e2e/features/log*\"",
