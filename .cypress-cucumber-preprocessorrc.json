@@ -2,7 +2,10 @@
   "json": {
     "enabled": true,
     "output": "reports/json/log.json",
-    "formatter": "cucumber-json-formatter"
+    "formatter": "node",
+    "args": [
+      "./node_modules/@deepakvishwakarma/cucumber-json-formatter/lib/main.js"
+    ]
   },
   "messages": {
     "enabled": true,

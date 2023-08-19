@@ -30,6 +30,7 @@
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^15.0.0",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
+    "@deepakvishwakarma/cucumber-json-formatter": "^0.0.2",
     "@shelex/cypress-allure-plugin": "^2.34.0",
     "@testing-library/cypress": "^9.0.0",
     "@types/del": "^4.0.0",
