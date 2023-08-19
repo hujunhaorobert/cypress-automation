@@ -32,9 +32,9 @@ jobs:
           command: apt update && apt install -y jq && apt install curl && curl --version 
       - run:
           name: Run tests
-          command: npm run cypress:multi-report
+          command: npm run cypress:multi-report && npm run combine:reports
       - store_test_results:
-          path: cypress/results
+          path: cypress/results/results.xml
       - store_artifacts:
           path: /root/project/cucumber-report.html
           destination: cucumber-report.html
