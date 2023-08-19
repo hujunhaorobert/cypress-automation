@@ -21,13 +21,13 @@ Given("User visit Qantas home page", () => {
     // errors, so we let them fail the test
   });
   // Workaround for 403 in circleCI
-  cy.visit("/au/en.html",{
-    headers: {
-      "Accept" : "application/json, text/plain, */*",
-      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36",
-      "LOYALTY-PARTNER-FORWARD": "D19313AA-5BFF-4586-947A-C3AE8D78CEA4"
-    }
-});
+  // cy.visit("/au/en.html",{
+  //   headers: {
+  //     "Accept" : "application/json, text/plain, */*",
+  //     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36",
+  //     "LOYALTY-PARTNER-FORWARD": "D19313AA-5BFF-4586-947A-C3AE8D78CEA4"
+  //   }
+  cy.visit("/");
   cy.log("Land on Qantas Home page");
   cy.url().should("contains", "/au/en.html");
 });
