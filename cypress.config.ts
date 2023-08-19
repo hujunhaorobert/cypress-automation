@@ -45,6 +45,10 @@ async function setupNodeEvents(on, config) {
 
 module.exports = defineConfig({
   experimentalWebKitSupport: true,
+  reporter: 'cypress-multi-reporters',
+  reporterOptions: {
+    configFile: 'reporter-config.json',
+  },
   // reporter: 'cypress-mochawesome-reporter',
   // reporterOptions: {
   //   //if not specify below reportDir, mochawesome report by default will be stored under cypress/reports folder
