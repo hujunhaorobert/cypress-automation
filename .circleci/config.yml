@@ -29,7 +29,7 @@ jobs:
           command: npm ci
       - run:
           name: Install JQ + CURL
-          command: sudo apt update && sudo apt install -y jq && sudo apt install curl && curl --version 
+          command: apt update && apt install -y jq && apt install curl && curl --version 
       - run:
           name: Run tests
           command: npm run cypress:run-allure:ci
