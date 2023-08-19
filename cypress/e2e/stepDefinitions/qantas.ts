@@ -20,7 +20,7 @@ Given("User visit Qantas home page", () => {
     // we still want to ensure there are no other unexpected
     // errors, so we let them fail the test
   });
-  cy.visit("/",{
+  cy.visit("https://www.saucedemo.com/au/en.html",{
     headers: {
         'accept': 'application/json, text/plain, */*',
         'user-agent': 'axios/0.27.2'
