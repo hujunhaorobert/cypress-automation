@@ -32,9 +32,9 @@ jobs:
           command: apt update && apt install -y jq && apt install curl && curl --version 
       - run:
           name: Run tests
-          command: npm run cypress:run-allure:ci
+          command: npm run cypress:junit
       - store_test_results:
-          path: results.xml
+          path: results/test-output.xml
       - store_artifacts:
           path: /root/project/cucumber-report.html
           destination: cucumber-report.html
