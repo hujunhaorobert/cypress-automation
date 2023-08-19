@@ -79,8 +79,8 @@ module.exports = defineConfig({
     },
     screenshotOnRunFailure: true,
     specPattern: "cypress/e2e/features/*.feature",
-    // baseUrl: "https://www.saucedemo.com",
-    baseUrl: "https://www.qantas.com",
+    baseUrl: "https://www.saucedemo.com",
+    // baseUrl: "https://www.qantas.com",
     chromeWebSecurity: false,
     env: {
       allureReuseAfterSpec: true,
