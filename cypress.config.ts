@@ -11,7 +11,7 @@ const allureWriter = require("@shelex/cypress-allure-plugin/writer");
 async function setupNodeEvents(on, config) {
   // This is required for the preprocessor to be able to generate JSON reports after each run, and more,
   await preprocessor.addCucumberPreprocessorPlugin(on, config);
-  ///
+  // Workaround for failure: GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
   on('before:browser:launch', (browser, launchOptions) => {
     // `args` is an array of all the arguments that will
     // be passed to browsers when it launches
