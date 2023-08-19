@@ -23,7 +23,7 @@ Given("User visit Qantas home page", () => {
   cy.visit("https://www.qantas.com/au/en.html",{
     headers: {
         'accept': 'application/json, text/plain, */*',
-        'user-agent': 'axios/0.27.2'
+        'user-agent': 'PostmanRuntime/7.32.3'
     }
 });
   cy.log("Land on Qantas Home page");
