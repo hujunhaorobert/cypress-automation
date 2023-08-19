@@ -58,7 +58,7 @@ module.exports = defineConfig({
   // },
   e2e: {
     setupNodeEvents,
-    video: false,
+    video: true,
     screenshotsFolder: "cypress/screenshots",
     retries: {
       runMode: 0,
