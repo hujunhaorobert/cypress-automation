@@ -32,7 +32,7 @@ jobs:
           command: apt update && apt install -y jq && apt install curl && curl --version 
       - run:
           name: Run tests
-          command: npx cypress run
+          command: npm run cypress:multi-report
       - store_test_results:
           path: cypress/results/results*.xml
       - store_artifacts:
