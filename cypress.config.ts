@@ -12,13 +12,13 @@ async function setupNodeEvents(on, config) {
   // This is required for the preprocessor to be able to generate JSON reports after each run, and more,
   await preprocessor.addCucumberPreprocessorPlugin(on, config);
   ///
-  on('before:browser:launch', (browser = {}, launchOptions) => {
+  on('before:browser:launch', (browser, launchOptions) => {
     // `args` is an array of all the arguments that will
     // be passed to browsers when it launches
-    console.log(launchOptions.args) // print all current args
-    launchOptions.args.push("--disable-3d-apis")
-    }
-  );
+    console.log(launchOptions.args); // print all current args
+    launchOptions.args.push("--disable-3d-apis");
+    return launchOptions;
+  });
   ///
   on(
     "file:preprocessor",
