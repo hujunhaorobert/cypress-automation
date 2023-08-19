@@ -15,8 +15,8 @@ async function setupNodeEvents(on, config) {
   on('before:browser:launch', (browser, launchOptions) => {
     // `args` is an array of all the arguments that will
     // be passed to browsers when it launches
-    console.log(launchOptions.args); // print all current args
     launchOptions.args.push("--disable-3d-apis");
+    console.log(launchOptions.args); // print all current args
     return launchOptions;
   });
   ///
