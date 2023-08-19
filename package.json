@@ -16,7 +16,7 @@
     "mochawesome:clear": "rimraf cypress/mochawesomeReport cypress/reports cypress-mochawesome-reporter.log || true",
     "allure:clear": "rimraf allure-results/ allure-report cypress/screenshots cypress/videos reports || true",
     "cypress:run-allure": "cypress run --env allure=true --headed",
-    "cypress:run-allure:ci": "DEBUG=cypress:server:project  cypress run --env allure=true --spec \"cypress/e2e/features/log*\"",
+    "cypress:run-allure:ci": "cypress run --env allure=true --spec \"cypress/e2e/features/log*\"",
     "allure:report": "allure generate allure-results --clean -o allure-report",
     "allure:history": "mv -f allure-report/history allure-results/history && rimraf allure-report || true",
     "allure:full": "npm run allure:clear && npm run cypress:run-allure && npm run allure:report && allure open",
